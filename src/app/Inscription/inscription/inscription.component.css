@@ -1,0 +1,74 @@
+.header{
+    display: flex;
+    /*margin-left: 4%;
+    height: 50px;*/
+    height: 50px;
+    margin-left: 1%;
+
+}
+
+.logo{
+    width: 100%;
+}
+.ika{
+    height: 170%;
+}
+hr{
+    margin-top: 30px;
+}
+form input{
+    border: 2px solid #9e9e9e;
+    border-radius: 5px;
+    padding-left: 6%;
+}
+.formDiv{
+    width: 40%;
+    margin-left: 10%;
+    padding-top: 4%;
+}
+
+#cercle {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background: #f43675;
+    margin-left: 85%;
+}
+
+.slogan{
+    margin-left: 10%;
+    /*font-size: 150%;*/
+}
+.sloganG{
+    font-weight: 900;
+    font-size: 230%;
+    font-family: ui-monospace;
+    /* letter-spacing: 2px; */
+    padding: 0%;
+    color: crimson;
+}
+.pMarge{margin-bottom: 0%;}
+.pMarge2{margin-bottom: 5%;}
+.sloganP{
+    font-size: 150%;
+    line-height: 5%;
+    color: navy;
+}
+.imgDiv{
+    background-color: orangered;
+    height: 70%;
+    margin-left: 10%;
+    width: 60%;
+    margin-top: 0%;
+}
+.content{
+    display: flex;
+}
+.pubImg{
+    height: 400px;
+    margin-left: 10%;
+}
+.enregistrer{
+    margin-top: 4%;
+
+}
