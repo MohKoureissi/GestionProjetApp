@@ -92,16 +92,37 @@ h4{
   text-align: left;
   font: 300 32px "Inter", sans-serif;
   position: relative;
-  width: 380.42px;
+  width: 90%;
   height: 38.82px;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
+  font-family: auto;
+  display: flex;
+  margin: 4%;
+  padding-left: 4%;
 }
 .itemsV{
-    background: #d9d9d9;
-    width: 133px;
-    height: 55px;
-    position: relative;
-    margin-left: 60%;
-    margin-top: 4%;
+  width: 60%;
+  height: 39px;
+  /* position: relative; */
+  margin-left: 18%;
+  margin-top: 0px;
+  margin-right: 4%;
+  padding: 0px;
+  font-family: auto;
+  border: none;
+  background-color: deeppink;
+}
+
+.itemsG{
+  width: 60%;
+  height: 39px;
+  /* position: relative; */
+  margin-left: 18%;
+  margin-top: 0px;
+  margin-right: 4%;
+  padding: 0px;
+  font-family: auto;
+  border: none;
+  background-color: #D9D9D9;
 }
   
