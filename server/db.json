@@ -1,0 +1,31 @@
+{
+	"projet" :[
+	{
+	"id" : "1",
+	"nom":"test",
+	"description" : "wwwwwwwwww",
+	"dateDebut" : "20-03-2023",
+	"dateFin" : "20-03-2023",
+	"membres" : "maiga"}
+	],
+"tache":[
+{
+	"id" : "1",
+	"titre":"test",
+	"description" : "wwwwwwwwww",
+	"dateEcheance" : "20-03-2023",
+	"membres" : "maiga",
+	"etat" : "en cours",
+	"assigneA" : "maiga",
+	"projetId":"1"}
+],
+"membre":[
+{
+	"id" : "1",
+	"nom":"test",
+	"prenom" : "wwwwwwwwww",
+	"email" : "ddddf@ff.com",
+	"membres" : "maiga"
+}
+]
+}

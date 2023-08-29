@@ -25,26 +25,13 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
               "@angular/material/prebuilt-themes/indigo-pink.css",
              
               "src/styles.css"
             ],
-            "scripts": [
-              
-            ]
-          
-=======
-              "node_modules/@fortawesome/fontawesome-free/css/all.css",
-              "./node_modules/materialize-css/dist/css/materialize.min.css",
-              "node_modules/bootstrap/dist/css/boutstrap.css",
-              "src/styles.css"
-            ],
-            "scripts": [
-              "./node_modules/materialize-css/dist/js/materialize.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
-          ]
->>>>>>> 79cf700fde28d0f212a2c1273c0742d8c0443d63
+           
+            "scripts": [ ]
+
           },
           "configurations": {
             "production": {
