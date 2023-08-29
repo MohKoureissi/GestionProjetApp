@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { DetailsTacheComponent } from '../details-tache/details-tache.component';
 //import { MatDialog } from '@angular/material/dialog';
-import { GestionMembresComponent } from '../gestion-membres/gestion-membres.component';
+//import { GestionMembresComponent } from '../gestion-membres/gestion-membres.component';
 import { Projet } from '../models/projet';
 import { ProjectService } from '../services/project.service';
 
