@@ -9,14 +9,89 @@
 </div>
 <hr>
 <div class="entete">
-    <button class="tBtn">Ajouter Tâche</button>
+    <button class="tBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter Tâche</button>
 </div>
 <div class="task">
-    <div class="taskImg"></div>
+    <div class="taskImg">
+        <img src="../assets/icon.jpg" width="100%" height="100%" alt="1">
+    </div>
     <div class="taskT"></div>
-    <div class="taskT"><span>Nom:</span> <button class="itemsG">etiquette</button></div>
-    <div class="taskT"><span>Nom:</span> <button class="itemsV">etiquette</button></div>
-    <div class="taskT"><span>Nom:</span> <button class="itemsG">etiquette</button></div>
+    <div class="taskT"><span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+      </svg>  Assigner A:</span> <button class="itemsG">etiquette</button></div>
+    <div class="taskT"><span>Etat:</span> <button class="itemsV">etiquette</button></div>
+    <div class="taskT"><span>Date:</span> <button class="itemsG">etiquette</button></div>
     
 </div>
+
+
+
+ <!-- Modal   -->
+ <div  id="exampleModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4>Nouvelle Tache</h4> <i class="fa-solid fa-trash-can"></i>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="containerr">
+
+                  
+                  <form id="contact-form" action="" method="post">
+                    <div class="input-group">
+                      <img style="margin-right: 10px;"  src="../assets/titre.png" width="26px" height="26px" alt="1">
+                      <div>
+                      <label for="">Titre </label> </div>
+                      <div style="margin-left: 33px;">
+                      <input type="text" id="name" name="name" style="width: 110%;" required>  </div>
+                  </div>
+                  <div class="input-group">
+                    <img style="margin-right: 10px;"  src="../assets/membre.png" width="26px" height="26px" alt="1">
+                    <div>
+                    <label for="">Membre </label> </div>
+                    <div style="margin-left: 3px;">
+                    <input type="text" id="name" name="name" style="width: 110%;" required>  </div>
+                </div>
+                <div class="input-group">
+                  <img style="margin-right: 10px;"  src="../assets/date.png" width="26px" height="26px" alt="1">
+                  <div>
+                  <label for="">DateEchéance </label> </div>
+                  <div style="margin-left: -43px;">
+                  <input type="date" id="name" name="name" style="width: 137%;" required>  </div>
+              </div>
+              <div class="input-group">
+                <img style="margin-right: 10px;"  src="../assets/etat.png" width="26px" height="26px" alt="1">
+                <div>
+                <label for="">Etat </label> </div>
+                <div style="margin-left: 43px;">
+                <input type="text" id="name" name="name" style="width: 110%;" required>  </div>
+              </div>
+                   
+                    <div class="input-group">
+                      <img style="margin-right: 10px;"  src="../assets/desc.png" width="36px" height="26px" alt="1">
+                      
+                      <label for="message">Description:</label>
+                      <textarea style="height: 60px; width: 65%; margin-left: 19px;"  id="message" name="description" rows="4" required></textarea>
+                    </div>
+                    <div class="btn-envoie">
+                     
+                        <div class="input-group" style="margin-left: 10vh;">
+                          <button type="submit">Enregistrer</button>
+                        </div>
+                  </div>
+                  </form>
+                </div>
+              
+              
+              <!-- etiquette couleur -->
+                
+              <div class="modal-dialog modal-sm">...</div>
+              
+              
+              
+      </div>
+      </div>
+    </div>
+  </div>
 

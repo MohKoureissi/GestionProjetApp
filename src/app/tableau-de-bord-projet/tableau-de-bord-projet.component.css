@@ -1,4 +1,4 @@
-<<<<<<< HEAD:src/app/tableau-de-bord-projet/tableau-de-bord-projet.component.css
+
 .container{
     display: flex;
 }
@@ -112,7 +112,8 @@
   .img-retour{
     margin-top: -10px;
   }
-=======
+
+/*
 .container{
     display: flex;
 }
@@ -123,13 +124,14 @@
 .boutton-creer{
     margin-top: 5vh;
     margin-left: 110vh;
-    /* background-color: #2B94F4; */
+    /* background-color: #2B94F4; 
 }
 
-.card-projet{
+.card-projet{ */
     /* display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 40px; */
+    /*
     display: flex;
   flex-wrap: wrap;
 }
@@ -159,4 +161,4 @@
 .name-projet{
     display: flex;
 }
->>>>>>> 79cf700fde28d0f212a2c1273c0742d8c0443d63:src/app/tableau-de-bord-projet/tableau-de-bord-projet/tableau-de-bord-projet.component.css
+*/

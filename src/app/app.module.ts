@@ -16,7 +16,7 @@ import { CreerProjetComponent } from './creer-projet/creer-projet.component';
 
 import { ListeTachesComponent } from './liste-taches/liste-taches/liste-taches.component';
 import { InscriptionComponent } from './Inscription/inscription/inscription.component';
-import { TableauDeBordProjetComponent } from './tableau-de-bord-projet/tableau-de-bord-projet/tableau-de-bord-projet.component';
+import { TableauDeBordProjetComponent } from './tableau-de-bord-projet/tableau-de-bord-projet.component';
 import { AddProjetComponent } from './add-projet/add-projet/add-projet.component';
 import { EditProjetComponent } from './edit-projet/edit-projet/edit-projet.component';
 import { ViewProjetComponent } from './view-projet/view-projet/view-projet.component';

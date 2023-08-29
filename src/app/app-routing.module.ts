@@ -9,7 +9,7 @@ import { EditProjetComponent } from './edit-projet/edit-projet/edit-projet.compo
 import { GestionMembresComponent } from './gestion-membres/gestion-membres.component';
 import { ListeTachesComponent } from './liste-taches/liste-taches/liste-taches.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found/page-not-found.component';
-import { TableauDeBordProjetComponent } from './tableau-de-bord-projet/tableau-de-bord-projet/tableau-de-bord-projet.component';
+import { TableauDeBordProjetComponent } from './tableau-de-bord-projet/tableau-de-bord-projet.component';
 
 
 const routes : Routes= [
