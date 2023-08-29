@@ -1,0 +1,128 @@
+.header{
+    display: flex;
+    /*margin-left: 4%;
+    height: 50px;*/
+    height: 50px;
+    margin-left: 1%;
+
+}
+.ptTitle{width: 80%;
+    padding: 0;
+    display: grid;}
+
+.logo{
+    width: 100%;
+    display: flex;
+}
+.ika{
+    height: 170%;
+    
+}
+hr{
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+h4{
+    font-size: 20px;
+    line-height: 110%;
+    /* margin: 0rem 0 .912rem 0; */
+    font-weight: 600;
+    margin-top: 0px;
+    text-align: center;
+   /* margin-left: 20%;*/
+}
+
+
+.titre{
+    color: #000000;
+    text-align: center;
+    font-size: 2.2rem;
+    line-height: 110%;
+    /* margin: 2.8rem 0 1.68rem 0; 
+    margin-left: 20%;*/
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .entete{
+    
+    height: 50px;
+    margin: 0px;
+    border-bottom: solid 1px;
+  }
+  .tBtn{
+    height: 80%;
+    width: 10%;
+    color: white;
+    margin: 5px;
+    font-weight: 600;
+    background-color: blue;
+    border: none;
+  }
+  .backDiv{
+    margin-left: 5%;
+  }
+  .back{
+    height: 60%;
+    width: 130%;
+    font-size: 20px;
+    background-color: red;
+    border: none;
+    color: white;
+    font-weight: 700;
+  }
+  .task{
+    background: #ffffff;
+    border-radius: 10px;
+    width: 380px;
+    height: 500px;
+    position: relative;
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+    margin: 2%;
+      }
+.taskImg{
+  background: #ecedf5;
+  border-radius: 10px 10px 0px 0px;
+  width: 380px;
+  height: 201.96px;
+  position: relative;
+}
+.taskT{
+  color: #000000;
+  text-align: left;
+  font: 300 32px "Inter", sans-serif;
+  position: relative;
+  width: 90%;
+  height: 38.82px;
+  /* background-color: aquamarine; */
+  font-family: auto;
+  display: flex;
+  margin: 4%;
+  padding-left: 4%;
+}
+.itemsV{
+  width: 60%;
+  height: 39px;
+  /* position: relative; */
+  margin-left: 18%;
+  margin-top: 0px;
+  margin-right: 4%;
+  padding: 0px;
+  font-family: auto;
+  border: none;
+  background-color: deeppink;
+}
+
+.itemsG{
+  width: 60%;
+  height: 39px;
+  /* position: relative; */
+  margin-left: 18%;
+  margin-top: 0px;
+  margin-right: 4%;
+  padding: 0px;
+  font-family: auto;
+  border: none;
+  background-color: #D9D9D9;
+}
+  
