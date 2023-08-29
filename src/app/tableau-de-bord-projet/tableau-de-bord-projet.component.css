@@ -10,6 +10,10 @@
     margin-left: 110vh;
     /* background-color: #2B94F4; */
 }
+.boutton-creer:hover{
+    box-shadow: rgba(0, 0, 0, 0.25);
+  
+}
 
 .card-projet{
     /* display: grid;
@@ -44,3 +48,66 @@
 .name-projet{
     display: flex;
 }
+
+
+
+/* Example */
+.input-group {
+    margin-bottom: 15px;
+  }
+  .input-group label {
+    display: block;
+    font-weight:normal;
+    font-size: large;
+    color: black;
+    margin-bottom: 5px;
+  }
+  .input-group input {
+    width: 77%;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: auto;
+  }
+  .input-group input:focus {
+    outline-color: #3498db;
+    border-color: #3498db;
+  }
+  .input-group button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 7px;
+    cursor: pointer;
+  }
+  .input-group a{
+    background-color: #3498db;
+    color: #fff;
+    margin-top: 25px;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 7px;
+    cursor: pointer;
+  }
+  .input-group button:hover {
+    background-color: #2980b9;
+  }
+  .btn-envoie{
+    display: flex;
+  }
+.img-retour img{
+  margin-left: 44vh;
+  margin-top: -9vh ;
+  background-color: #fff;
+}
+
+  .img-retour img:hover{
+    background-color: #ccc;
+   cursor: pointer;
+   box-shadow:  2 8px 15px rgba(1, 1, 1, 0.1);;
+  }
+  .img-retour{
+    margin-top: -10px;
+  }

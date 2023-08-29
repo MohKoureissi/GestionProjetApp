@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .container {
+    margin-top: 10vh;
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 500px;
+  }
+  .img-retour{
+   margin-left: 64vh;
+   margin-top: -20px ;
+  }
+  .partager{
+    display: flex;
+  }
+  .partagerB{
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 7px;
+    cursor: pointer;
+    width: 100px;
+  }
+ 
+
+  .input-group input:focus {
+    outline-color: #3498db;
+    border-color: #3498db;
+  }
+  .input-group button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 35vh;
+  }
+  .input-group button:hover {
+    background-color: #2980b9;
+  }
+ 

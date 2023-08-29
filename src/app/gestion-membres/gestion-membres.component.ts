@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailsTacheComponent } from '../details-tache/details-tache.component';
 
 @Component({
   selector: 'app-gestion-membres',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./gestion-membres.component.css']
 })
 export class GestionMembresComponent {
+  
 
 }

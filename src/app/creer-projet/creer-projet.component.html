@@ -1,33 +1,40 @@
 
-<div class="container">
-    <h3>Nouveau Projet</h3>
-    <form id="contact-form" action="" method="post">
-      <div class="input-group">
-        <label for="name">Nom:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="input-group">
-        <label for="dateDebut">DateDebut:</label>
-        <input type="date" id="dateDebut" name="dateDebut" required>
-      </div>
-      <div class="input-group">
-        <label for="dateFin">DateFin:</label>
-        <input type="date" id="dateFin" name="dateFin" required>
-      </div>
-      <div class="input-group">
-        <label for="message">Description:</label>
-        <textarea style="height: 60px;" id="message" name="message" rows="4" required></textarea>
-      </div>
-      <div class="btn-envoie">
-        <div class="input-group" style="width: 250px;">
-            <button type="submit">Ajouter Membre</button>
-          </div>
-          <div class="input-group" style="margin-left: 15vh;">
-            <button type="submit">Enregistrer</button>
-          </div>
+<div class="container_projet">
+  <div class="container">
+    <div class="img-retour">
+      <img routerLink="/tableau-de-bord-projet" src="../assets/retour.png" width="36px" height="26px"alt="1">
+      <h3>Nouveau Projet</h3>
     </div>
-    </form>
-  </div>
+      <form id="contact-form" action="" method="post">
+        <div class="input-group">
+          <label for="name">NomProjet:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="input-group">
+          <label for="dateDebut">DateDebut:</label>
+          <input type="date" id="dateDebut" name="dateDebut" required>
+        </div>
+        <div class="input-group">
+          <label for="dateFin">DateFin:</label>
+          <input type="date" id="dateFin" name="dateFin" required>
+        </div>
+        <div class="input-group">
+          <label for="message">Description:</label>
+          <textarea style="height: 60px;" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <div class="btn-envoie">
+          <div class="input-group" style="width: 250px;">
+            <div style="margin-top: 10px;">
+             <button (click)="openDetail()" >Ajouter Membre </button>
+            </div>
+            </div>
+            <div class="input-group" style="margin-left: 15vh; margin-top: 1vh;">
+              <button type="submit">Enregistrer</button>
+            </div>
+      </div>
+      </form>
+    </div>
+</div>
 
 
 
