@@ -6,6 +6,7 @@ nom: string;
 description : string;
 dateDebut : string;
 dateFin : string;
-membres  : Membre[];
+photo : string;
+membres  ?: Membre[];
 
 }
