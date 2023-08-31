@@ -16,9 +16,15 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 500px;
   }
+
+  
+
+
   .img-retour{
-   margin-left: 64vh;
+    float: right;
+   margin-left: 67vh;
    margin-top: -20px ;
+   margin-right: -3.5vh;
   }
   .partager{
     display: flex;

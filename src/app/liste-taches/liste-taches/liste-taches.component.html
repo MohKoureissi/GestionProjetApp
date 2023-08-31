@@ -3,41 +3,50 @@
     <img class="ika" src="../assets/Group 80.png" alt="mp">
     <div class="ptTitle"><h1 class="titre">Espace de Travail</h1><h4>ppppp</h4></div>
     <div class="backDiv">
-        <button class="back">X</button>
+        <button routerLink="/projet" class="back">X</button>
     </div>
     </div>
 </div>
 <hr>
 <div class="entete">
-    <button class="tBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter Tâche</button>
+    <button class="tBtn" style="width: auto; margin-top: 1vh;" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Ajouter Tâche </button>
+    <img src="../assets/Group 96.png" style="float: right; margin-right: 3vh;margin-top: 1vh;width: 200px; " alt=""> 
 </div>
+<hr style="margin-top: 1vh;">
 <div class="task">
     <div class="taskImg">
-        <img src="../assets/icon.jpg" width="100%" height="100%" alt="1">
+        <img  src="../assets/icon.jpg" data-bs-toggle="modal" data-bs-target="#exampleModal3" style="border-radius: 10px;" width="100%" height="100%" alt="1">
     </div>
-    <div class="taskT"></div>
-    <div class="taskT"><span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-      </svg>  Assigner A:</span> <button class="itemsG">etiquette</button></div>
-    <div class="taskT"><span>Etat:</span> <button class="itemsV">etiquette</button></div>
-    <div class="taskT"><span>Date:</span> <button class="itemsG">etiquette</button></div>
-    
+    <div class="taskT"> <h4>Projet de Construction </h4></div>
+    <div class="taskT">
+      <span> <img src="../assets/user-alt.png" style="margin-top: -10px;margin-right: 1vh;" width="20px" height="20px"> </span><p style="font-size: 25px;"> Assigner A</p><button class="itemsG" >Membre</button></div>
+    <div class="conteneur">
+      <span> <img src="../assets/etat.png" style="margin-top: -10px;margin-right: 1vh;" width="20px" height="20px"> </span>
+      <p style="font-size: 25px;"> Etat</p>
+      <span class="itemt"><input (click)="changeEtat()" type="button" name="etat" value="A Faire" style="margin-left: 17vh; color: white;border: none; width: 135px;font-size: smaller;background-color:  #F42B7F; " class="item" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+        <!-- Terminer</button>  -->
+      </span>
+    </div>
+    <div class="taskT">
+      <span> <img src="../assets/date.png" style="margin-top: -10px;margin-right: 1vh; " height="20px" width="20px"> </span>
+      <p style="font-size: 25px;"> Date</p>
+      <span  class="itemsG"><input type="date" name="date" style="margin-left: 10vh;border: none; color: black;height: 35px; width: 135px;font-size: smaller;background-color:  #D9D9D9; "></span>
+    </div>
+   
 </div>
 
 
 
- <!-- Modal   -->
+ <!-- Modal  Nouvell tache -->
  <div  id="exampleModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content" >
         <div class="modal-header">
             <h4>Nouvelle Tache</h4> <i class="fa-solid fa-trash-can"></i>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="containerr">
-
-                  
                   <form id="contact-form" action="" method="post">
                     <div class="input-group">
                       <img style="margin-right: 10px;"  src="../assets/titre.png" width="26px" height="26px" alt="1">
@@ -81,17 +90,142 @@
                         </div>
                   </div>
                   </form>
-                </div>
-              
-              
-              <!-- etiquette couleur -->
+                </div>     
+            </div>
+         </div>
+       </div>
+    </div>
+
+   <!-- etiquette couleur -->
                 
-              <div class="modal-dialog modal-sm">...</div>
+   
+    <div  id="exampleModal2" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="width : 250px">
+        <div class="modal-header">
+            <h4>Changer Etat</h4> <i class="fa-solid fa-trash-can"></i>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <fieldset>
+            <div class="selecteur-couleur">
+             <div class="couleur-choix" style="background-color: #2BF47B; padding: 19px;">
+               <p class="etatI" style="background-color: #2BF47B; margin-top: -1vh;" name="Terminer">Terminer </p>
+               <!-- Terminer</button> -->
+             </div>
+              <div class="couleur-choix" style=" background-color: #F42B7F;padding: 19px; padding-top: 0.5vh;">
+                <p class="etatI" style="background-color: #F42B7F;" name="aFaire" >A Faire</p>
               
-              
-              
+             </div>
+              <div class="couleur-choix" style=" background-color: #FF8D07;padding: 19px; padding-top: 0.5vh;">
+                <p class="etatI" name="enCours" value="En Cours" >En Cours</p>
+               
+              </div>
+            </div>
+          </fieldset>
+
+        </div>
       </div>
+     </div>
+   </div>
+
+
+   <!-- details taches -->
+
+   <!-- <p>{{"le resultat" +1+1}}</p>
+<p>{{superficie()}}</p> -->
+<div  id="exampleModal3" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="modal-header">
+      <h4 style="width: -webkit-fill-available;">Tache 1 -> Projet 1</h4><i class="fa-solid fa-trash-can"></i>
+      <img style="margin-right: 10px;margin-left: 34vh; cursor: pointer;"  src="../assets/delete.png" data-bs-toggle="modal" data-bs-target="#exampleModal4" width="26px" height="26px" alt="1">
+    
+       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      
+     </div>
+     <div class="modal-body">
+<div class="containerr">
+  <div style="float: right;">
+       
+  </div>
+     <!-- <i class="fa-solid fa-trash-can"></i> -->
+    <form id="contact-form" action="" method="post">
+      <div class="input-group">
+        <img style="margin-right: 10px;"  src="../assets/titre.png" width="26px" height="26px" alt="1">
+        <div>
+        <label for="">Titre </label> </div>
+        <div style="margin-left: 33px;">
+        <input type="text" id="name" name="name" style="width: 110%;" required>  </div>
+    </div>
+    <div class="input-group">
+      <img style="margin-right: 10px;"  src="../assets/membre.png" width="26px" height="26px" alt="1">
+      <div>
+      <label for="">Membre </label> </div>
+      <div style="margin-left: 3px;">
+      <input type="text" id="name" name="name" style="width: 110%;" required>  </div>
+  </div>
+  <div class="input-group">
+    <img style="margin-right: 10px;"  src="../assets/date.png" width="26px" height="26px" alt="1">
+    <div>
+    <label for="">DateEchéance </label> </div>
+    <div style="margin-left: -43px;">
+    <input type="date" id="name" name="name" style="width: 128%;" required>  </div>
+</div>
+<div class="input-group">
+  <img style="margin-right: 10px;"  src="../assets/etat.png" width="26px" height="26px" alt="1">
+  <div>
+  <label for="">Etat </label> </div>
+  <div style="margin-left: 43px;">
+  <input type="text" id="name" name="name" style="width: 110%;" required>  </div>
+</div>
+     
+      <div class="input-group">
+        <img style="margin-right: 10px;"  src="../assets/desc.png" width="26px" height="26px" alt="1">
+        
+        <label for="message">Description:</label>
+        <textarea style="height: 60px; width: 55%; margin-left: 25px;"  id="message" name="description" rows="4" required></textarea>
+      </div>
+      <div class="btn-envoie">
+       
+          <div class="input-group" style="margin-left: 10vh;">
+            <button type="submit">Enregistrer</button>
+          </div>
+    </div>
+    </form>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- Validation Oui et NON  -->
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><h2>Voulez-vous vraiment supprimer ?</h2></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container2">
+          
+          <div style="display: flex; float: right;">
+            <div style="width: 100px;">NON</div>
+            <div style="width: 100px; background-color: #2B94F4 ;">OUI</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
-
+</div>

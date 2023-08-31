@@ -19,7 +19,6 @@ import { InscriptionComponent } from './Inscription/inscription/inscription.comp
 import { TableauDeBordProjetComponent } from './tableau-de-bord-projet/tableau-de-bord-projet.component';
 import { AddProjetComponent } from './add-projet/add-projet/add-projet.component';
 import { EditProjetComponent } from './edit-projet/edit-projet/edit-projet.component';
-import { ViewProjetComponent } from './view-projet/view-projet/view-projet.component';
 import { DeleteProjetComponent } from './delete-projet/delete-projet/delete-projet.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found/page-not-found.component';
 import {HttpClientModule} from "@angular/common/http";
@@ -38,7 +37,6 @@ import {HttpClientModule} from "@angular/common/http";
     TableauDeBordProjetComponent,
     AddProjetComponent,
     EditProjetComponent,
-    ViewProjetComponent,
     DeleteProjetComponent,
     PageNotFoundComponent
   ],

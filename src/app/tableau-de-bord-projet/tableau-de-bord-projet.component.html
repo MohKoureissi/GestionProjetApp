@@ -1,22 +1,19 @@
 
 
       <div class="container">
-        <div class="logo">
-        <img src="../assets/Group 80.png"  style="width: 200px; margin-left: 0px;" alt="mp">
-        </div>
-        <div class="boutton-creer ">
-            <button type="button" class="waves-effect waves-light btn #2B94F4 blue darken-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div  class="header">
+    <div class="logo">
+    <img class="ika" src="../assets/Group 80.png" alt="mp">
+  </div>
+        <div class="input-group">
+            <button style="margin-left: 125vh;margin-top: 3vh; width: 75px; font-size: large;" class="btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Creer
               </button>
             <!-- <a  class="waves-effect waves-light btn #2B94F4 blue darken-2">Creer</a> -->
         </div>
         </div>
+      </div>
         <hr>
-        
-        
-        <!-- Modal -->
-        
-        <!-- Button trigger modal -->
         
           
           <!-- Modal -->
@@ -58,11 +55,13 @@
                   <div class="btn-envoie">
                     <div class="input-group" style="width: 250px;">
                       <div style="margin-top: 1px;">
-                        <a style="width: 150px; height: 40px; margin-top: 1vh; " class="waves-effect waves-light btn #2B94F4 blue darken-2">Ajouter Membre</a>
-                      </div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ajouterMembre">
+                         Ajouter Membre
+                        </button>
+                           </div>
                     </div>
                       <div class="input-group" style="margin-left: 15vh; margin-top: 1vh;">
-                        <button style="width: 90px; height: 40px; ;" type="submit">Enregistrer</button>
+                        <button style="width: 90px; height: 40px; " type="submit">Enregistrer</button>
                    </div>
                 </div>
                 </div>
@@ -75,6 +74,45 @@
         
         <!-- Fin Modal -->
         
+        <!-- Ajouter Membre -->
+
+      <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="ajouterMembre" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" routerLink="/liste-taches" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="img-retour"><img src="../assets/retour.png" width="36px" height="26px" alt="1"></div>
+        <div> <h2>Partager le tableau</h2></div>
+        <div> <h4>Membre</h4></div>
+        <div class="partager">
+            <div class="input-group flex-nowrap">
+                <!-- <span class="input-group-text" id="addon-wrapping">Adresse email</span> -->
+                <input style="width: 300px; background-color: whitesmoke;"  type="text"  placeholder="Adresse email">
+              </div>
+       
+            <div class="input-group" style="margin-left: 10vh;">
+              <button style="margin-left: auto; " type="submit">Partager</button>
+            </div>
+     
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+      
+
+<!-- Fin modal ajouter membre -->
         
         
         <div class="row">
@@ -113,29 +151,6 @@
                    </div>
                    </div>
                    </div>
-              <!-- Promo Content 2 goes here -->
-            </div>
-            <div class="col s3">
-                <div class="projet-icon">
-                    <div class="projet-icon-color"> <!--Le font bleu derriere l'image -->
-                       <div class="img">
-                       <img src="../assets/5.png" width="330px"height="188px" style="margin: 10px; border-radius: 10px;" alt="p1">
-                   </div>
-                   <div class="name-projet">   <!-- Le nom du projet -->
-                       <div>
-                        <!-- L'icone derriere le nom du projet  -->
-                       <img src="../assets/dock_to_right.png" style="margin-top: -8px;height: 30px; margin-left: 7px;">
-                   </div>
-                   <div>
-                       <h5 class="text-projet">Projet 1</h5>
-                   </div>
-                   </div>
-                   </div>
-                   </div>
-              <!-- Promo Content 3 goes here -->
-            </div>
-            
-        
             
         
           </div>
