@@ -16,7 +16,7 @@
         <hr>
         
           
-          <!-- Modal -->
+          <!-- Modal Nouveau Projet-->
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -26,29 +26,29 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        
-                          <form id="contact-form" action="" method="post">
+                          <form id="contact-form" (submit)="saveProjet(pro)" action="tableau-de-bord-projet.component.html" method="post" #pro="ngForm">
                             <div class="input-group">
                               <label for="name">NomProjet:</label>
-                              <input type="text" id="name" name="name" required>
+                              <input [(ngModel)]="projet.nom" type="text" id="name" name="nom" required>
                             </div>
                             <div class="input-group">
                               <label for="dateDebut">DateDebut:</label>
-                              <input type="date" id="dateDebut" name="dateDebut" required>
+                              <input [(ngModel)]="projet.dateDebut" type="date" id="dateDebut" name="dateDebut" required>
                             </div>
                             
                             <div class="input-group">
-                                <label for="dateDebut">DateFin_Projet:</label>
-                                <input type="date" id="dateDebut" name="dateDebut" required>
+                                <label for="dateFin">DateFin_Projet:</label>
+                                <input [(ngModel)]="projet.dateFin" type="date" id="dateFin" name="dateFin" required>
                               </div>
-                            
+                              <div class="input-group">
+                                <label for="name">Membre:</label>
+                                <input [(ngModel)]="projet.membre" type="text" id="membre" name="membre" required>
+                              </div>
                             <div class="input-group">
                               <label for="message">Description:</label>
-                              <textarea style="height: 60px; " id="message" name="message" rows="4" required></textarea>
-                            </div>
-                            
-                         
-               
+                              <textarea [(ngModel)]="projet.description" style="height: 60px; " id="message" name="description" rows="4" required></textarea> 
+                             
+                            </div>       
                 <div class="modal-footerc">
                   <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary">Save changes</button>   -->
@@ -61,8 +61,12 @@
                            </div>
                     </div>
                       <div class="input-group" style="margin-left: 15vh; margin-top: 1vh;">
-                        <button style="width: 90px; height: 40px; " type="submit">Enregistrer</button>
-                   </div>
+                        <!-- <button  style="width: 90px; height: 40px; ;" *ngIf="projet.id == 0" type="submit" data-bs-dismiss="modal">Enregistrer</button>
+                        <button  style="width: 90px; height: 40px; ;" *ngIf="projet.id != 0" type="submit" data-bs-dismiss="modal">Modifier</button> -->
+                        <button style="width: 90px; height: 40px;" [hidden]="projet.id != 0" type="button" (click)="saveProjet(pro)"  data-bs-dismiss="modal">Enregistrer</button>
+                        <button style="width: 90px; height: 40px;" [hidden]="projet.id == 0" type="button"(click)="onUpdate()"  data-bs-dismiss="modal">Modifier</button>
+
+                      </div>
                 </div>
                 </div>
             </form>
@@ -71,9 +75,42 @@
               </div>
             </div>
           </div>
-        
         <!-- Fin Modal -->
         
+        <!-- Tableau de projet -->
+
+
+        <table class="table">
+          <thead>
+            <tr >
+              
+              <th scope="col">NomProjet</th>
+              <th scope="col">DateDebut</th>
+              <th scope="col">DateFin</th>
+              <th scope="col">Membre</th>
+              <th scope="col">Description</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- ; let i = index -->
+            <tr *ngFor="let item of projetArr" >
+             
+              <td>{{item.nom}}</td>
+              <td>{{item.dateDebut}}</td>
+              <td>{{item.dateFin}}</td>
+              <td>{{item.membre}}</td>
+              <td>{{item.description}}</td>
+              <td>
+                <button type="button" class="btn btn-primary" (click)="onEdit(item)"  data-bs-toggle="modal" data-bs-target="#exampleModal" >Editer</button>&nbsp;
+                <button type="button" class="btn btn-primary" (click)="onDelete(item.id)">Supprimer</button>
+              </td>
+              
+            </tr>
+              
+          </tbody>
+        </table>
+
         <!-- Ajouter Membre -->
 
       <!-- Button trigger modal -->
@@ -84,29 +121,24 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Partager le tableau</h1>
         <button type="button" routerLink="/liste-taches" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="img-retour"><img src="../assets/retour.png" width="36px" height="26px" alt="1"></div>
-        <div> <h2>Partager le tableau</h2></div>
         <div> <h4>Membre</h4></div>
         <div class="partager">
             <div class="input-group flex-nowrap">
                 <!-- <span class="input-group-text" id="addon-wrapping">Adresse email</span> -->
-                <input style="width: 300px; background-color: whitesmoke;"  type="text"  placeholder="Adresse email">
+                <input style="width: 300px; background-color: whitesmoke; margin-left: 2vh; height: auto;"  type="text"  placeholder="Adresse email">
               </div>
        
-            <div class="input-group" style="margin-left: 10vh;">
-              <button style="margin-left: auto; " type="submit">Partager</button>
+            <div class="input-group" style="margin-left: 5vh;  height: auto;">
+              <button style="margin-left: -2vh;width: 100px; " type="submit">Partager</button>
             </div>
      
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      
     </div>
   </div>
 </div>
@@ -114,45 +146,112 @@
 
 <!-- Fin modal ajouter membre -->
         
+    <!--    
+        <div *ngIf="!loading && projets.length > 0" class="row">
         
-        <div class="row">
-        
-            <div class="col s3">
+            <div *ngFor="let projet of projets" class="col s3">
                 <div class="projet-icon">
-                    <div class="projet-icon-color"> <!--Le font bleu derriere l'image -->
+                    <div class="projet-icon-color"> <!--Le font bleu derriere l'image -
                        <div class="img">
-                       <img src="../assets/Rectangle 40.png" width="330px" style="margin: 10px;" alt="p1">
+                       <img [src]="projet.photo" width="330px" style="margin: 10px;" alt="p1">
                    </div>
-                   <div class="name-projet">   <!-- Le nom du projet -->
-                       <div>
-                       <img src="../assets/dock_to_right.png" style="margin-top: -8px;height: 30px; margin-left: 7px;">
-                   </div>
-                   <div>
-                       <!-- <h5 class="text-projet" [ngStyle]="{color:'red'}">{{name}}</h5> -->
+                   <div class="name-projet" >   <!-- Le nom du projet -
+                        <div><span><h4><img src="../assets/dock_to_right.png" style="margin-top: -8px;height: 30px; margin-left: 7px;">{{projet.nom }}</h4> <button (click)="openEditModal(projet)" data-bs-toggle="modal" data-bs-target="#editModal">E</button><button>S</button></span></div>
+                        <p>{{projet.description}}</p>
                    </div>
                    </div>
                    </div>
-                   </div>
-             
             </div>
+        </div>         
+          <!-- "./node_modules/materialize-css/dist/css/materialize.min.css", -->
+
+          <!-- Modal Edit --
+          <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modification Projet</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                 <div class="modal-body">
+                    <!-- <div class="container"> --
+                          <form (submit)="saveChanges()" id="contact-form" action="" method="post">
+                            <div class="input-group">
+                              <label for="name">NomProjet:</label>
+                              <input [(ngModel)]="projetEnEdition.nom"  [value]="projetEnEdition.nom" id="name" name="nom" >
+                            </div>
+                             <div class="input-group">
+                              <label for="dateDebut">DateDebut:</label>
+                              <input [(ngModel)]="projetEnEdition.dateDebut" type="date" id="dateDebut" name="dateDebut" required>
+                             </div>
+                            
+                             <div class="input-group">
+                                <label for="dateFin">DateFin_Projet:</label>
+                                <input [(ngModel)]="projetEnEdition.dateFin" type="date" id="dateFin" name="dateFin" required>
+                              </div>
+                            
+                               <div class="input-group">
+                                  <label for="photo">Photo</label>
+                                  <input [(ngModel)]="projetEnEdition.photo"  [src]="projet.photo" id="photo" name="photo" required>
+                               </div>
+                                <div class="input-group">
+                                  <label for="message">Description:</label>
+                                  <textarea [(ngModel)]="projetEnEdition.description" style="height: 60px; " id="message" name="message" rows="4" required></textarea> 
+                                  <pre>{{projetEnEdition | json}}</pre>
+                                </div>
+                            
+                                 <div class="input-group">
+                                  <select [(ngModel)]="projetEnEdition.membres" *ngIf="membres.length > 0"> 
+                                   <!-- <option value="">Select member</option> --
+                                   <option [value]="membre.id" *ngFor="let membre of membres">{{membre.email}}</option>
+                                  </select>
+                                 </div>
+                  <!-- </div> -->
+                    <div class="modal-footerc">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>   -->
+                       <div class="btn-envoie">
+                        <div class="input-group" style="width: 250px;">
+                         <div style="margin-top: 1px;">
+                           <a style="width: 150px; height: 40px; margin-top: 1vh; " class="waves-effect waves-light btn #2B94F4 blue darken-2">Ajouter Membre</a>
+                         </div>
+                        </div>
+                          <div class="input-group" style="margin-left: 15vh; margin-top: 1vh;">
+                              <input style="width: 90px; height: 40px; ;" type="submit" value="Edit" data-bs-dismiss="modal">
+                          </div>
+                       </div>
+                    </div>
+            
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+
             <div class="col s3">
                 <div class="projet-icon">
                     <div class="projet-icon-color"> <!--Le font bleu derriere l'image -->
                        <div class="img">
-                       <img src="../assets/4.png" width="330px" height="188px"  style="margin: 10px; border-radius: 10px;"  alt="p1">
+                       <img src="../assets/5.png" width="330px"height="188px" style="margin: 10px; border-radius: 10px;" alt="p1">
                    </div>
                    <div class="name-projet">   <!-- Le nom du projet -->
                        <div>
+                        <!-- L'icone derriere le nom du projet  -->
                        <img src="../assets/dock_to_right.png" style="margin-top: -8px;height: 30px; margin-left: 7px;">
                    </div>
                    <div>
-                       <h5 class="text-projet">Projet 2</h5>
+                       <h5 class="text-projet">Projet 1</h5>
                    </div>
                    </div>
                    </div>
-                   </div>
+                  </div>
+              <!-- Promo Content 3 goes here -->
+            </div>
+            <!-- </div> -->
+            <!-- </div> -->
             
         
-          </div>
+            
         
-          <!-- "./node_modules/materialize-css/dist/css/materialize.min.css", -->
+         
+       
+        
+        <!-- Fin Modal -->

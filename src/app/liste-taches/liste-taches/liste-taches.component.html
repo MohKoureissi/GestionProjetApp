@@ -47,46 +47,47 @@
         </div>
         <div class="modal-body">
             <div class="containerr">
-                  <form id="contact-form" action="" method="post">
+                  <form id="contact-form" (submit)="ajoutTache(ajout)" action="liste-taches.component.html" method="post" #ajout="ngForm">
                     <div class="input-group">
                       <img style="margin-right: 10px;"  src="../assets/titre.png" width="26px" height="26px" alt="1">
                       <div>
                       <label for="">Titre </label> </div>
                       <div style="margin-left: 33px;">
-                      <input type="text" id="name" name="name" style="width: 110%;" required>  </div>
+                      <input type="text" id="titre" name="titre" style="width: 110%;" required>  </div>
                   </div>
                   <div class="input-group">
                     <img style="margin-right: 10px;"  src="../assets/membre.png" width="26px" height="26px" alt="1">
                     <div>
                     <label for="">Membre </label> </div>
                     <div style="margin-left: 3px;">
-                    <input type="text" id="name" name="name" style="width: 110%;" required>  </div>
+                    <input type="text" id="membre" name="membre" style="width: 110%;" required>  </div>
                 </div>
                 <div class="input-group">
                   <img style="margin-right: 10px;"  src="../assets/date.png" width="26px" height="26px" alt="1">
                   <div>
                   <label for="">DateEchéance </label> </div>
                   <div style="margin-left: -43px;">
-                  <input type="date" id="name" name="name" style="width: 137%;" required>  </div>
+                  <input type="date" id="dateEcheqnce" name="dateEcheance" style="width: 137%;" required>  </div>
               </div>
               <div class="input-group">
                 <img style="margin-right: 10px;"  src="../assets/etat.png" width="26px" height="26px" alt="1">
                 <div>
                 <label for="">Etat </label> </div>
                 <div style="margin-left: 43px;">
-                <input type="text" id="name" name="name" style="width: 110%;" required>  </div>
+                <input type="text" id="etat" name="etat" style="width: 110%;" required>  </div>
               </div>
                    
                     <div class="input-group">
                       <img style="margin-right: 10px;"  src="../assets/desc.png" width="36px" height="26px" alt="1">
                       
                       <label for="message">Description:</label>
-                      <textarea style="height: 60px; width: 65%; margin-left: 19px;"  id="message" name="description" rows="4" required></textarea>
+                      <textarea style="height: 60px; width: 65%; margin-left: 19px;"  id="description" name="description" rows="4" required></textarea>
                     </div>
                     <div class="btn-envoie">
                      
                         <div class="input-group" style="margin-left: 10vh;">
-                          <button type="submit">Enregistrer</button>
+                          <button type="button" [hidden]="tache.id != 0"  (click)="ajoutTache(ajout)" data-bs-dismiss="modal"  >Enregistrer</button>
+                          <button type="button" [hidden]="tache.id == 0"  (click)="onUpdate()">Modifier</button>
                         </div>
                   </div>
                   </form>
@@ -139,9 +140,9 @@
    <div class="modal-content">
      <div class="modal-header">
       <h4 style="width: -webkit-fill-available;">Tache 1 -> Projet 1</h4><i class="fa-solid fa-trash-can"></i>
-      <img style="margin-right: 10px;margin-left: 34vh; cursor: pointer;"  src="../assets/delete.png" data-bs-toggle="modal" data-bs-target="#exampleModal4" width="26px" height="26px" alt="1">
+      <img class="" data-bs-dismiss="modal" style="margin-right: 10px;margin-left: 34vh; cursor: pointer;"  src="../assets/delete.png" data-bs-toggle="modal" data-bs-target="#exampleModal4" width="26px" height="26px" alt="1">
     
-       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
       
      </div>
      <div class="modal-body">
@@ -208,23 +209,23 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+    <div class="modal-content" style="width: 80%;">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel"><h2>Voulez-vous vraiment supprimer ?</h2></h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><h3>Voulez-vous vraiment supprimer ?</h3></h1>
+       
       </div>
-      <div class="modal-body">
+      <!-- <div class="modal-body">
         <div class="container2">
           
           <div style="display: flex; float: right;">
-            <div style="width: 100px;">NON</div>
+            <div style="width: 100px;"></div>
             <div style="width: 100px; background-color: #2B94F4 ;">OUI</div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NON</button>
+        <button type="button" style="width: 70px;" class="btn btn-primary">Oui</button>
       </div>
     </div>
   </div>

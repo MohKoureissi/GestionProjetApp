@@ -6,6 +6,6 @@ nom: string;
 description : string;
 dateDebut : string;
 dateFin : string;
-membres  : Membre[];
+membres: ''
 
 }

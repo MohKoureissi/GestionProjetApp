@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { DetailsTacheComponent } from '../details-tache/details-tache.component';
+//import { MatDialog } from '@angular/material/dialog';
+//import { DetailsTacheComponent } from '../details-tache/details-tache.component';
 
 @Component({
   selector: 'app-gestion-membres',

@@ -10,46 +10,48 @@ import { Membre } from '../models/membre';
 })
 export class ProjectService {
 
-    private static serverUrl: string = 'http://localhost:9000'; // Supprimez un des "http://" ici
+    private  serverUrl: string = 'http://localhost:9000'; // Supprimez un des "http://" ici
 
     constructor(private httpClient: HttpClient) { }
 
-    public getAllProjects(): Observable<Projet[]>{
-      let dataURL: string = `${ProjectService.serverUrl}/projet`; // Utilisation de ProjectService.serverUrl
+    public getAllProjects(){
+      let dataURL: string = `${this.serverUrl}/projet`; // Utilisation de ProjectService.serverUrl
       return this.httpClient.get<Projet[]>(dataURL).pipe(catchError(this.handleError));
     }
 
     // get projet
     public getProject(projetId: string): Observable<Projet>{
-      let dataURL: string = `${ProjectService.serverUrl}/projet/${projetId}`; // Utilisation de ProjectService.serverUrl
+      let dataURL: string = `${this.serverUrl}/projet/${projetId}`; // Utilisation de ProjectService.serverUrl
       return this.httpClient.get<Projet>(dataURL).pipe(catchError(this.handleError));
     }
 
     // add projet
     public addProject(projet: Projet): Observable<Projet>{
-      let dataURL: string = `${ProjectService.serverUrl}/projet`; // Utilisation de ProjectService.serverUrl
+      let dataURL: string = `${this.serverUrl}/projet`; // Utilisation de ProjectService.serverUrl
       return this.httpClient.post<Projet>(dataURL, projet).pipe(catchError(this.handleError));
     }
 
     // update projet
     public updateProject(projet: Projet, projetId: string): Observable<Projet>{
-      let dataURL: string = `${ProjectService.serverUrl}/projet/${projetId}`; // Utilisation de ProjectService.serverUrl
-      return this.httpClient.put<Projet>(dataURL, projet).pipe(catchError(this.handleError));
+      let dataURL: string = `${this.serverUrl}/projet`; // Utilisation de ProjectService.serverUrl
+      const ty = this.httpClient.put<Projet>(dataURL, projet).pipe(catchError(this.handleError));
+      console.log(ty);
+      return ty;
     }
 
     // delete projet 
     public deleteProject(projetId: string): Observable<{}>{
-      let dataURL: string = `${ProjectService.serverUrl}/projet/${projetId}`; // Utilisation de ProjectService.serverUrl
+      let dataURL: string = `${this.serverUrl}/projet/${projetId}`; // Utilisation de ProjectService.serverUrl
       return this.httpClient.delete<{}>(dataURL).pipe(catchError(this.handleError));
     }
 //get all members
       public getAllMembers(): Observable<Membre[]>{
-        let dataURL: string = `${ProjectService.serverUrl}/membres`; // Utilisation de ProjectService.serverUrl
+        let dataURL: string = `${this.serverUrl}/membres`; // Utilisation de ProjectService.serverUrl
         return this.httpClient.get<Membre[]>(dataURL).pipe(catchError(this.handleError));
       }
 // get single member
       public getMembersOfProject(projetId: string): Observable<Membre[]>{
-        let dataURL: string = `${ProjectService.serverUrl}/membres/${projetId}`; // Utilisation de ProjectService.serverUrl
+        let dataURL: string = `${this.serverUrl}/membres/${projetId}`; // Utilisation de ProjectService.serverUrl
         return this.httpClient.get<Membre[]>(dataURL).pipe(catchError(this.handleError));
       }
 
