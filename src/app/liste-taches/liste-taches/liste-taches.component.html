@@ -1,7 +1,7 @@
 <div class="header">
     <div class="logo">
     <img class="ika" src="../assets/Group 80.png" alt="mp">
-    <div class="ptTitle"><h1 class="titre">Espace de Travail</h1><h4>ppppp</h4></div>
+    <div class="ptTitle"><h1 class="titre">Espace de Travail</h1><h4>{{tache.nom}}</h4></div>
     <div class="backDiv">
         <button routerLink="/projet" class="back">X</button>
     </div>
@@ -20,7 +20,7 @@
     <div class="taskImg">
         <img  src="../assets/icon.jpg" data-bs-toggle="modal" data-bs-target="#exampleModal3" style="border-radius: 10px;" width="100%" height="100%" alt="1">
     </div>
-    <div class="taskT"> <h4>{{tache.titre}} {{tache.id}}</h4></div>
+    <div class="taskT"> <h4>{{tache.titre}} </h4></div>
     <div class="taskT">
       <span> <img src="../assets/user-alt.png" style="margin-top: -10px;margin-right: 1vh;" width="20px" height="20px"> </span><p style="font-size: 25px;"> Assigner A</p><button class="itemsG" >{{tache.assigneA}}</button></div>
     <div class="conteneur">
