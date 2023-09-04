@@ -19,6 +19,10 @@ import { DeleteProjetComponent } from './delete-projet/delete-projet/delete-proj
 import { PageNotFoundComponent } from './page-not-found/page-not-found/page-not-found.component';
 import {HttpClientModule} from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
+//===============================
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +47,11 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule, 
+    MatIconModule
+   
 ],
 providers: [],
 bootstrap: [AppComponent]

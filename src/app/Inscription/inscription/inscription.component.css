@@ -20,20 +20,39 @@ form input{
     border: 2px solid #9e9e9e;
     border-radius: 5px;
     padding-left: 6%;
+
+    margin: 2%;
+    height: 40px;
+    width: 60%;
+
 }
 .formDiv{
     width: 40%;
     margin-left: 10%;
-    padding-top: 4%;
+    /* padding-top: 4%; */
 }
 
 #cercle {
+    position: absolute;
+    z-index: 1;
     width: 60px;
     height: 60px;
     border-radius: 30px;
     background: #f43675;
-    margin-left: 85%;
+    margin-left: 65%;
+    margin-top: -96px;
 }
+#cercle2 {
+    position: absolute;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background: #F4672B;
+    margin-left: 73%;
+    margin-top: -160px;
+}
+
 
 .slogan{
     margin-left: 10%;
@@ -48,27 +67,38 @@ form input{
     color: crimson;
 }
 .pMarge{margin-bottom: 0%;}
-.pMarge2{margin-bottom: 5%;}
+.pMarge2{
+    margin-bottom: 5%;
+    margin-top: 5%;}
 .sloganP{
     font-size: 150%;
     line-height: 5%;
     color: navy;
 }
 .imgDiv{
-    background-color: orangered;
-    height: 70%;
-    margin-left: 10%;
-    width: 60%;
-    margin-top: 0%;
+    position: absolute;
+    margin-left: 80%;
+    margin-top: 8%;
 }
 .content{
     display: flex;
 }
 .pubImg{
     height: 400px;
-    margin-left: 10%;
+    margin-left: 45%;
+    margin-top: -10%;
+    position: absolute;
 }
 .enregistrer{
     margin-top: 4%;
 
+}
+button{
+    color: white;
+    background-color: #2B94F4;
+    margin-left: 2%;
+}
+.lfoouter{
+    height: 70px;
+    width: 50px;
 }
