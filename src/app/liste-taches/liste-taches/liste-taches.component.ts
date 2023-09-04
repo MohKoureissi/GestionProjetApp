@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ListeTachesComponent implements OnInit{
   ngOnInit(): void {
-    const text : string| any=localStorage.getItem('projet');
+    const text : string| any=localStorage.getItem('tache');
   if(text != null){
     this.tacheArr= JSON.parse(text);
   }
@@ -26,18 +26,42 @@ export class ListeTachesComponent implements OnInit{
  }
 
  ajoutTache(ajout : NgForm){
-  this.tache.id = this.tacheArr.length +1;
-  this.tacheArr.push(this.tache);
-  localStorage.setItem('projet',JSON.stringify(this.tacheArr));
-  this.tache= {
-    id : 0,
-    titre: '',
-    description :'',
-    dateEcheance : '',
-    assigneA : '',
-    //projetId :'',
-    etat: ''
-   }
+  // this.tache.id = this.tacheArr.length +1;
+  // this.tacheArr.push(this.tache);
+  // localStorage.setItem('tache',JSON.stringify(this.tacheArr));
+  // this.tache= {
+  //   id : 0,
+  //   titre: '',
+  //   description :'',
+  //   dateEcheance : '',
+  //   assigneA : '',
+  //   //projetId :'',
+  //   etat: ''
+  //  }
+
+    const nouvelleTache = {
+      id: this.tacheArr.length + 1,
+      titre: this.tache.titre,
+      description: this.tache.description,
+      dateEcheance: this.tache.dateEcheance,
+      assigneA: this.tache.assigneA,
+      etat: this.tache.etat
+    };
+  
+    this.tacheArr.push(nouvelleTache);
+    localStorage.setItem('tache', JSON.stringify(this.tacheArr));
+  
+    // Réinitialiser this.tache à un nouvel objet vide
+    this.tache = {
+      id: 0,
+      titre: '',
+      description: '',
+      dateEcheance: '',
+      assigneA: '',
+      etat: ''
+    };
+  
+  
  }
 
  onEdit(item :any){
@@ -66,17 +90,21 @@ export class ListeTachesComponent implements OnInit{
     this.tache = {};
 
     // Enregistrez les modifications dans localStorage si nécessaire
-    localStorage.setItem('projet', JSON.stringify(this.tacheArr));
+    localStorage.setItem('tache', JSON.stringify(this.tacheArr));
   }
 }
 
+      selectedTaskId: number | null = null;
+      setSelectedTaskId(taskId: number) {
+        this.selectedTaskId = taskId;
+      }
 
 onDelete(id: number){
-  for(let i = 0; i<= this.tacheArr.length; i++){
+  for(let i = 0; i< this.tacheArr.length; i++){
     if(this.tacheArr[i].id== id){
       this.tacheArr.splice(i,1);
     }
-    localStorage.setItem('projet',JSON.stringify(this.tacheArr));
+    localStorage.setItem('tache',JSON.stringify(this.tacheArr));
   }
   }
 
@@ -106,5 +134,7 @@ onDelete(id: number){
   });
   
   }
+
+
 
 }

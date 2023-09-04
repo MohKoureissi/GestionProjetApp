@@ -13,13 +13,16 @@
     <img src="../assets/Group 96.png" style="float: right; margin-right: 3vh;margin-top: 1vh;width: 200px; " alt=""> 
 </div>
 <hr style="margin-top: 1vh;">
-<div class="task">
+
+<!-- carte de tache -->
+<div *ngIf="tacheArr.length > 0">
+<div class="task" *ngFor="let tache of tacheArr">
     <div class="taskImg">
         <img  src="../assets/icon.jpg" data-bs-toggle="modal" data-bs-target="#exampleModal3" style="border-radius: 10px;" width="100%" height="100%" alt="1">
     </div>
-    <div class="taskT"> <h4>Projet de Construction </h4></div>
+    <div class="taskT"> <h4>{{tache.titre}} {{tache.id}}</h4></div>
     <div class="taskT">
-      <span> <img src="../assets/user-alt.png" style="margin-top: -10px;margin-right: 1vh;" width="20px" height="20px"> </span><p style="font-size: 25px;"> Assigner A</p><button class="itemsG" >Membre</button></div>
+      <span> <img src="../assets/user-alt.png" style="margin-top: -10px;margin-right: 1vh;" width="20px" height="20px"> </span><p style="font-size: 25px;"> Assigner A</p><button class="itemsG" >{{tache.assigneA}}</button></div>
     <div class="conteneur">
       <span> <img src="../assets/etat.png" style="margin-top: -10px;margin-right: 1vh;" width="20px" height="20px"> </span>
       <p style="font-size: 25px;"> Etat</p>
@@ -30,9 +33,13 @@
     <div class="taskT">
       <span> <img src="../assets/date.png" style="margin-top: -10px;margin-right: 1vh; " height="20px" width="20px"> </span>
       <p style="font-size: 25px;"> Date</p>
-      <span  class="itemsG"><input type="date" name="date" style="margin-left: 10vh;border: none; color: black;height: 35px; width: 135px;font-size: smaller;background-color:  #D9D9D9; "></span>
+      <span  class="itemsG"><input type="date" name="dateEcheance" style="margin-left: 10vh;border: none; color: black;height: 35px; width: 135px;font-size: smaller;background-color:  #D9D9D9;" [value]="tache.dateEcheance"></span>
     </div>
-   
+    <div style="float: right; margin-right: 4vh; cursor: pointer;">
+     <button (click)="setSelectedTaskId(tache.id)" style="border: none; background-color: #fff;" data-bs-toggle="modal" data-bs-target="#exampleModal5" > <img src="../assets/delete.png" height="30px" alt="d"> </button>
+    </div>
+
+</div>
 </div>
 
 
@@ -53,35 +60,35 @@
                       <div>
                       <label for="">Titre </label> </div>
                       <div style="margin-left: 33px;">
-                      <input type="text" id="titre" name="titre" style="width: 110%;" required>  </div>
+                      <input  [(ngModel)]="tache.titre" type="text" id="titre" name="titre" style="width: 110%;" required>  </div>
                   </div>
                   <div class="input-group">
                     <img style="margin-right: 10px;"  src="../assets/membre.png" width="26px" height="26px" alt="1">
                     <div>
-                    <label for="">Membre </label> </div>
+                    <label for="">Assigner A </label> </div>
                     <div style="margin-left: 3px;">
-                    <input type="text" id="membre" name="membre" style="width: 110%;" required>  </div>
+                    <input  [(ngModel)]="tache.assigneA" type="text" id="assigneA" name="assigneA" style="width: 110%;" required>  </div>
                 </div>
                 <div class="input-group">
                   <img style="margin-right: 10px;"  src="../assets/date.png" width="26px" height="26px" alt="1">
                   <div>
                   <label for="">DateEchéance </label> </div>
                   <div style="margin-left: -43px;">
-                  <input type="date" id="dateEcheqnce" name="dateEcheance" style="width: 137%;" required>  </div>
+                  <input  [(ngModel)]="tache.dateEcheance" type="date" id="dateEcheqnce" name="dateEcheance" style="width: 137%;" required>  </div>
               </div>
-              <div class="input-group">
+              <div style="display: none;" class="input-group">
                 <img style="margin-right: 10px;"  src="../assets/etat.png" width="26px" height="26px" alt="1">
-                <div>
+                <div >
                 <label for="">Etat </label> </div>
                 <div style="margin-left: 43px;">
-                <input type="text" id="etat" name="etat" style="width: 110%;" required>  </div>
+                <input  [(ngModel)]="tache.etat" type="text" id="etat" name="etat" style="width: 110%;" value="A Faire" required>  </div>
               </div>
                    
                     <div class="input-group">
                       <img style="margin-right: 10px;"  src="../assets/desc.png" width="36px" height="26px" alt="1">
                       
                       <label for="message">Description:</label>
-                      <textarea style="height: 60px; width: 65%; margin-left: 19px;"  id="description" name="description" rows="4" required></textarea>
+                      <textarea  [(ngModel)]="tache.description" style="height: 60px; width: 65%; margin-left: 19px;"  id="description" name="description" rows="4" required></textarea>
                     </div>
                     <div class="btn-envoie">
                      
@@ -203,29 +210,20 @@
 
 <!-- Validation Oui et NON  -->
 
-<!-- Button trigger modal -->
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content" style="width: 80%;">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel"><h3>Voulez-vous vraiment supprimer ?</h3></h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><h3>Voulez-vous vraiment supprimer ? {{ selectedTaskId }}</h3></h1>
        
       </div>
-      <!-- <div class="modal-body">
-        <div class="container2">
-          
-          <div style="display: flex; float: right;">
-            <div style="width: 100px;"></div>
-            <div style="width: 100px; background-color: #2B94F4 ;">OUI</div>
-          </div>
-        </div>
-      </div> -->
+     
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NON</button>
-        <button type="button" style="width: 70px;" class="btn btn-primary">Oui</button>
+        <button (click)="selectedTaskId !== null ? onDelete(selectedTaskId) : null" type="button" style="width: 70px;" class="btn btn-primary" data-bs-dismiss="modal">Oui</button>
       </div>
     </div>
   </div>
