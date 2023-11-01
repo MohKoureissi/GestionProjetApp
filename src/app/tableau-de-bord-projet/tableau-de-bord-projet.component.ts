@@ -24,8 +24,6 @@ export class TableauDeBordProjetComponent implements OnInit{
     membres : ''
   }
   
-
-
 ngOnInit(): void {
   const text : string| any=localStorage.getItem('projet');
   if(text != null){
@@ -96,6 +94,11 @@ for(let i = 0; i<= this.projetArr.length; i++){
   localStorage.setItem('projet',JSON.stringify(this.projetArr));
 }
 }
+
+selectedProject: string | null = null;
+      setSelectedProject(nom: string) {
+        this.selectedProject = nom;
+      }
 
 }
 

@@ -130,11 +130,11 @@
             <!-- </div> -->
           <!-- </div> -->
 
-            <div class="col s3" *ngIf="projetArr.length >0"   >
+            <div class="col s3" *ngIf="projetArr.length >0" >
                 <div class="projet-icon" *ngFor="let projet of projetArr">
                     <div class="projet-icon-color"> <!--Le font bleu derriere l'image -->
                        <div class="img">
-                       <img routerLink="/liste-taches" src="../assets/5.png" width="330px"height="188px" style="margin: 10px; border-radius: 10px;" alt="p1">
+                       <img routerLink="/liste-taches" (click)="setSelectedProject(projet.nom)" src="../assets/5.png" width="330px"height="188px" style="margin: 10px; border-radius: 10px;" alt="p1">
                    </div>
                    <div class="name-projet">   <!-- Le nom du projet -->
                        <div>
